@@ -3,29 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CAFLink – Full-spectrum technology services: Software Development, Web Development, Database Management, Hosting, Digital Marketing, Content Creation and AI Platforms.">
+  <meta name="description" content="CAFLink – Full-spectrum technology services: Software, Web, Database, Hosting, Marketing, Content and AI.">
   <title>CAFLink – Digital Innovation & Technology Services</title>
-  <link rel="icon" type="image/png" id="favicon-link">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon - served as static file -->
+  <link rel="icon" type="image/jpeg" href="/static/images/favicon.jpg">
+
+  <!-- Fonts embedded as system-safe stack + Google Fonts fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+
   <link rel="stylesheet" href="/static/css/style.css">
-  <!-- Embed logo & favicon inline -->
-  <script>
-    (function(){
-      var LOGO_B64    = "{{ logo_b64 }}";
-      var FAVICON_B64 = "{{ favicon_b64 }}";
-      window.LOGO_SRC    = "data:image/jpeg;base64," + LOGO_B64;
-      window.FAVICON_SRC = "data:image/png;base64,"  + FAVICON_B64;
-      document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('img.logo-img').forEach(function(img){ img.src = window.LOGO_SRC; });
-        var fl = document.getElementById('favicon-link');
-        if(fl){ fl.href = window.FAVICON_SRC; }
-      });
-    })();
-  </script>
 </head>
 <body>
 
-<!-- ═══════════════════════ NOTIFICATION BAR ═══════════════════════ -->
+<!-- ══ NOTIFICATION BAR ══════════════════════════════════════════ -->
 <div id="notif-bar">
   <div class="notif-inner">
     <span>🚀 CAFLink is offering FREE consultations for new clients! &nbsp;<a href="#contact">Book yours today →</a></span>
@@ -33,25 +25,22 @@
   </div>
 </div>
 
-<!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+<!-- ══ NAVIGATION ════════════════════════════════════════════════ -->
 <nav id="main-nav">
   <div class="nav-inner">
-    <!-- Logo -->
     <a href="#home" class="nav-logo">
-      <img class="logo-img" alt="CAFLink Logo">
+      <img src="/static/images/logo.jpg" alt="CAFLink Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-text-fallback" style="display:none;font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#0057ff;">CAFLink</span>
     </a>
-    <!-- Links -->
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About Us</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul>
-    <!-- CTA -->
     <div class="nav-actions">
       <button class="btn-nav" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Free Quote</button>
     </div>
-    <!-- Hamburger -->
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -64,10 +53,10 @@
   <a href="#about">About Us</a>
   <a href="#services">Services</a>
   <a href="#contact">Contact Us</a>
-  <button class="btn-nav" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});document.getElementById('mobile-nav').classList.remove('active');document.getElementById('hamburger').classList.remove('open')">Get a Free Quote</button>
+  <button class="btn-nav" style="margin-top:12px" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});document.getElementById('mobile-nav').classList.remove('active');document.getElementById('hamburger').classList.remove('open')">Get a Free Quote</button>
 </div>
 
-<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<!-- ══ HERO ══════════════════════════════════════════════════════ -->
 <div id="home">
   <div class="hero-dots"></div>
   <div class="hero-inner">
@@ -78,60 +67,68 @@
         <span class="grad">Scale Faster.</span><br>
         Grow Bolder.
       </h1>
-      <p class="hero-p">CAFLink delivers end-to-end technology services — from custom software to AI-driven platforms — built for the businesses of tomorrow.</p>
+      <p class="hero-p">CAFLink delivers end-to-end technology services — from custom software to AI-driven platforms — engineered for the businesses of tomorrow.</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
         <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Talk to Us</button>
       </div>
-      <div class="hero-stats">
+      <div class="hero-stats" id="hero-stats">
         <div><div class="stat-n" data-count="150" data-suffix="+">150+</div><div class="stat-l">Projects Delivered</div></div>
-        <div><div class="stat-n" data-count="98" data-suffix="%">98%</div><div class="stat-l">Client Satisfaction</div></div>
-        <div><div class="stat-n" data-count="5" data-suffix="+">5+</div><div class="stat-l">Years Excellence</div></div>
-        <div><div class="stat-n" data-count="40" data-suffix="+">40+</div><div class="stat-l">Expert Engineers</div></div>
+        <div><div class="stat-n" data-count="98"  data-suffix="%">98%</div><div class="stat-l">Client Satisfaction</div></div>
+        <div><div class="stat-n" data-count="5"   data-suffix="+">5+</div><div class="stat-l">Years Excellence</div></div>
+        <div><div class="stat-n" data-count="40"  data-suffix="+">40+</div><div class="stat-l">Expert Engineers</div></div>
       </div>
     </div>
     <div class="hero-right">
       <div class="float-badge-2">🏆 Top-Rated Tech Partner</div>
       <div class="hero-card-main">
-        <img class="logo-img hero-logo-img" alt="CAFLink">
+        <img src="/static/images/logo.jpg"
+             alt="CAFLink"
+             class="hero-logo-img"
+             onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='flex'">
+        <div id="logo-fallback" style="display:none;flex-direction:column;align-items:center;gap:8px">
+          <div style="font-size:4rem">🔗</div>
+          <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#0057ff">CAFLink</div>
+        </div>
       </div>
       <div class="float-badge">🚀 AI-Powered<br>Solutions</div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════ TICKER ═══════════════════════ -->
+<!-- ══ TICKER ════════════════════════════════════════════════════ -->
 <div class="ticker-band">
   <div class="ticker-track">
     <span class="ticker-item">Software Development</span>
     <span class="ticker-item">Web Development</span>
     <span class="ticker-item">Database Management</span>
-    <span class="ticker-item">Server & Hosting</span>
+    <span class="ticker-item">Server &amp; Hosting</span>
     <span class="ticker-item">Digital Marketing</span>
     <span class="ticker-item">Content Creation</span>
     <span class="ticker-item">AI-Driven Platforms</span>
     <span class="ticker-item">Cloud Infrastructure</span>
-    <span class="ticker-item">DevOps & CI/CD</span>
+    <span class="ticker-item">DevOps &amp; CI/CD</span>
     <span class="ticker-item">Software Development</span>
     <span class="ticker-item">Web Development</span>
     <span class="ticker-item">Database Management</span>
-    <span class="ticker-item">Server & Hosting</span>
+    <span class="ticker-item">Server &amp; Hosting</span>
     <span class="ticker-item">Digital Marketing</span>
     <span class="ticker-item">Content Creation</span>
     <span class="ticker-item">AI-Driven Platforms</span>
     <span class="ticker-item">Cloud Infrastructure</span>
-    <span class="ticker-item">DevOps & CI/CD</span>
+    <span class="ticker-item">DevOps &amp; CI/CD</span>
   </div>
 </div>
 
-<!-- ═══════════════════════ ABOUT US ═══════════════════════ -->
+<!-- ══ ABOUT ═════════════════════════════════════════════════════ -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
       <div class="about-img-side reveal">
         <div class="about-chip-2">⭐ 5-Star Rated Agency</div>
         <div class="about-img-card">
-          <img class="logo-img about-logo" alt="CAFLink">
+          <img src="/static/images/logo.jpg" class="about-logo" alt="CAFLink"
+               onerror="this.outerHTML='<div style=\'font-family:Syne,sans-serif;font-size:2rem;font-weight:800;color:#0057ff\'>CAFLink</div>'">
         </div>
         <div class="about-chip">🏅 ISO-Aligned<br>Data Security</div>
       </div>
@@ -140,7 +137,7 @@
         <h2>We're the tech backbone your business needs.</h2>
         <p>CAFLink was founded with a single belief: <strong>great technology should be accessible to every ambitious business</strong>. From Nagpur to the world, we've been powering startups and enterprises with digital solutions that actually work.</p>
         <p>Our multidisciplinary team combines engineering excellence with creative strategy — so your digital presence not only performs, it stands out. We don't just write code; we engineer growth.</p>
-        <p>With a track record of 150+ successful projects across industries — FinTech, EdTech, HealthTech, Retail and more — we bring both the depth and breadth required to deliver transformative outcomes.</p>
+        <p>With a track record of 150+ successful projects across industries — FinTech, EdTech, HealthTech, Retail and more — we bring both depth and breadth to deliver transformative outcomes.</p>
         <div class="check-grid">
           <div class="check-item"><div class="check-icon">✓</div>Agile delivery methodology</div>
           <div class="check-item"><div class="check-icon">✓</div>24/7 dedicated support</div>
@@ -149,50 +146,37 @@
           <div class="check-item"><div class="check-icon">✓</div>ISO-aligned data security</div>
           <div class="check-item"><div class="check-icon">✓</div>Dedicated project manager</div>
         </div>
-        <div class="team-grid" style="margin-top:32px">
-          <div class="team-card">
-            <div class="team-avatar">AK</div>
-            <div class="team-name">Arjun Kulkarni</div>
-            <div class="team-role">CEO & Founder</div>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar">SR</div>
-            <div class="team-name">Sneha Rao</div>
-            <div class="team-role">CTO</div>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar">VP</div>
-            <div class="team-name">Vikram Patil</div>
-            <div class="team-role">Head of Design</div>
-          </div>
+        <div class="team-grid">
+          <div class="team-card"><div class="team-avatar">AK</div><div class="team-name">Arjun Kulkarni</div><div class="team-role">CEO & Founder</div></div>
+          <div class="team-card"><div class="team-avatar">SR</div><div class="team-name">Sneha Rao</div><div class="team-role">CTO</div></div>
+          <div class="team-card"><div class="team-avatar">VP</div><div class="team-name">Vikram Patil</div><div class="team-role">Head of Design</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+<!-- ══ SERVICES ══════════════════════════════════════════════════ -->
 <section id="services">
   <div class="container">
     <div class="section-head reveal">
       <span class="section-tag">What We Do</span>
       <h2 class="section-title">Services That Move the Needle</h2>
-      <p class="section-sub">A full-spectrum digital powerhouse — everything your business needs under one roof, powered by real engineers and creatives.</p>
+      <p class="section-sub">A full-spectrum digital powerhouse — everything your business needs under one roof.</p>
     </div>
     <div id="services-grid" class="services-grid">
-      <!-- Loaded from API -->
-      <div class="loading-card" style="height:240px"></div>
-      <div class="loading-card" style="height:240px"></div>
-      <div class="loading-card" style="height:240px"></div>
-      <div class="loading-card" style="height:240px"></div>
-      <div class="loading-card" style="height:240px"></div>
-      <div class="loading-card" style="height:240px"></div>
-      <div class="loading-card" style="height:240px"></div>
+      <div class="loading-card" style="height:220px"></div>
+      <div class="loading-card" style="height:220px"></div>
+      <div class="loading-card" style="height:220px"></div>
+      <div class="loading-card" style="height:220px"></div>
+      <div class="loading-card" style="height:220px"></div>
+      <div class="loading-card" style="height:220px"></div>
+      <div class="loading-card" style="height:220px"></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════ PROCESS ═══════════════════════ -->
+<!-- ══ PROCESS ════════════════════════════════════════════════════ -->
 <section id="process">
   <div class="container">
     <div class="section-head reveal">
@@ -204,7 +188,7 @@
       <div class="proc-step reveal">
         <div class="proc-num">01</div>
         <div class="proc-title">Discovery</div>
-        <div class="proc-desc">We learn your business goals, users and competitive landscape through focused workshops.</div>
+        <div class="proc-desc">We learn your goals, users and competitive landscape through focused workshops.</div>
       </div>
       <div class="proc-step reveal d1">
         <div class="proc-num">02</div>
@@ -230,7 +214,7 @@
   </div>
 </section>
 
-<!-- ═══════════════════════ TECH STACK ═══════════════════════ -->
+<!-- ══ TECH STACK ═════════════════════════════════════════════════ -->
 <section id="tech">
   <div class="container">
     <div class="section-head reveal">
@@ -239,19 +223,22 @@
       <p class="section-sub">Best-in-class tools for every layer of your digital product.</p>
     </div>
     <div class="tech-chips reveal">
-      <span class="tech-chip">React</span><span class="tech-chip">Next.js</span><span class="tech-chip">Node.js</span>
-      <span class="tech-chip">Python</span><span class="tech-chip">FastAPI</span><span class="tech-chip">TypeScript</span>
-      <span class="tech-chip">PostgreSQL</span><span class="tech-chip">MongoDB</span><span class="tech-chip">Redis</span>
-      <span class="tech-chip">AWS</span><span class="tech-chip">Google Cloud</span><span class="tech-chip">Azure</span>
-      <span class="tech-chip">Docker</span><span class="tech-chip">Kubernetes</span><span class="tech-chip">Terraform</span>
-      <span class="tech-chip">OpenAI API</span><span class="tech-chip">LangChain</span><span class="tech-chip">TensorFlow</span>
-      <span class="tech-chip">Vue.js</span><span class="tech-chip">Flutter</span><span class="tech-chip">React Native</span>
-      <span class="tech-chip">GraphQL</span><span class="tech-chip">Elasticsearch</span><span class="tech-chip">Stripe API</span>
+      <span class="tech-chip">React</span><span class="tech-chip">Next.js</span>
+      <span class="tech-chip">Node.js</span><span class="tech-chip">Python</span>
+      <span class="tech-chip">FastAPI</span><span class="tech-chip">TypeScript</span>
+      <span class="tech-chip">PostgreSQL</span><span class="tech-chip">MongoDB</span>
+      <span class="tech-chip">Redis</span><span class="tech-chip">AWS</span>
+      <span class="tech-chip">Google Cloud</span><span class="tech-chip">Azure</span>
+      <span class="tech-chip">Docker</span><span class="tech-chip">Kubernetes</span>
+      <span class="tech-chip">OpenAI API</span><span class="tech-chip">LangChain</span>
+      <span class="tech-chip">TensorFlow</span><span class="tech-chip">Flutter</span>
+      <span class="tech-chip">React Native</span><span class="tech-chip">GraphQL</span>
+      <span class="tech-chip">Stripe API</span><span class="tech-chip">Elasticsearch</span>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+<!-- ══ TESTIMONIALS ══════════════════════════════════════════════ -->
 <section id="testimonials">
   <div class="container">
     <div class="section-head reveal">
@@ -267,11 +254,11 @@
   </div>
 </section>
 
-<!-- ═══════════════════════ NEWSLETTER ═══════════════════════ -->
-<div class="newsletter-band reveal">
+<!-- ══ NEWSLETTER ════════════════════════════════════════════════ -->
+<div class="newsletter-band">
   <div class="container">
     <h2>Stay Ahead of the Curve</h2>
-    <p>Monthly insights on tech, AI and digital marketing — straight to your inbox. No spam, ever.</p>
+    <p>Monthly insights on tech, AI and digital marketing. No spam, ever.</p>
     <div class="newsletter-form">
       <input type="email" id="nl-email" placeholder="Enter your email address">
       <button class="btn-white" id="nl-btn" onclick="subscribeNewsletter()">Subscribe</button>
@@ -279,19 +266,18 @@
   </div>
 </div>
 
-<!-- ═══════════════════════ CONTACT US ═══════════════════════ -->
+<!-- ══ CONTACT ════════════════════════════════════════════════════ -->
 <section id="contact">
   <div class="container">
     <div class="section-head reveal">
       <span class="section-tag">Get In Touch</span>
       <h2 class="section-title">Let's Build Something Great</h2>
-      <p class="section-sub">Tell us about your project and we'll get back within 24 hours with a tailored proposal.</p>
+      <p class="section-sub">Tell us about your project and we'll reply within 24 hours with a tailored proposal.</p>
     </div>
     <div class="contact-grid">
-      <!-- Left Info -->
       <div class="contact-left reveal">
         <h2>Talk to a CAFLink Expert</h2>
-        <p>Whether you have a clear brief or just a rough idea — we're here to shape it into something extraordinary. No obligation, no pressure. Let's talk.</p>
+        <p>Whether you have a clear brief or just a rough idea — we're here to shape it into something extraordinary. No obligation, no pressure.</p>
         <div class="info-item">
           <div class="info-icon">📧</div>
           <div><div class="info-label">Email</div><div class="info-val">hello@caflink.com</div></div>
@@ -313,29 +299,15 @@
           <div><div class="info-label">Response Time</div><div class="info-val">Within 24 hours guaranteed</div></div>
         </div>
       </div>
-
-      <!-- Right Form -->
       <div class="contact-form-box reveal d1">
         <form id="contact-form" novalidate>
           <div class="form-row">
-            <div class="fg">
-              <label>First Name <span class="form-required">*</span></label>
-              <input type="text" id="c-fname" placeholder="Rahul">
-            </div>
-            <div class="fg">
-              <label>Last Name</label>
-              <input type="text" id="c-lname" placeholder="Sharma">
-            </div>
+            <div class="fg"><label>First Name <span class="form-required">*</span></label><input type="text" id="c-fname" placeholder="Rahul"></div>
+            <div class="fg"><label>Last Name</label><input type="text" id="c-lname" placeholder="Sharma"></div>
           </div>
           <div class="form-row">
-            <div class="fg">
-              <label>Email Address <span class="form-required">*</span></label>
-              <input type="email" id="c-email" placeholder="rahul@company.com">
-            </div>
-            <div class="fg">
-              <label>Phone Number</label>
-              <input type="tel" id="c-phone" placeholder="+91 98765 43210">
-            </div>
+            <div class="fg"><label>Email <span class="form-required">*</span></label><input type="email" id="c-email" placeholder="rahul@company.com"></div>
+            <div class="fg"><label>Phone</label><input type="tel" id="c-phone" placeholder="+91 98765 43210"></div>
           </div>
           <div class="form-row">
             <div class="fg">
@@ -345,7 +317,7 @@
                 <option>Software Development</option>
                 <option>Web Development</option>
                 <option>Database Management</option>
-                <option>Server & Hosting</option>
+                <option>Server &amp; Hosting</option>
                 <option>Digital Marketing</option>
                 <option>Content Creation</option>
                 <option>AI-Driven Platform</option>
@@ -368,9 +340,7 @@
             <label>Tell Us About Your Project</label>
             <textarea id="c-msg" placeholder="Describe your project, goals, timeline and any specific requirements…"></textarea>
           </div>
-          <button type="submit" class="submit-btn" id="contact-submit">
-            Send Message →
-          </button>
+          <button type="submit" class="submit-btn" id="contact-submit">Send Message →</button>
           <p class="form-note">🔒 Your data is secure. We never share your information with third parties.</p>
         </form>
       </div>
@@ -378,18 +348,19 @@
   </div>
 </section>
 
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<!-- ══ FOOTER ═════════════════════════════════════════════════════ -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img class="logo-img" alt="CAFLink">
-        <p>CAFLink is a full-spectrum digital agency delivering technology solutions that help businesses innovate, scale and lead in their markets. Based in Nagpur, India.</p>
+        <img src="/static/images/logo.jpg" alt="CAFLink"
+             onerror="this.outerHTML='<div style=\'font-family:Syne,sans-serif;font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:14px\'>CAFLink</div>'">
+        <p>CAFLink is a full-spectrum digital agency delivering technology solutions that help businesses innovate, scale and lead. Based in Nagpur, India.</p>
         <div class="social-row" style="margin-top:20px">
-          <a href="#" class="soc-btn" title="Twitter">𝕏</a>
-          <a href="#" class="soc-btn" title="LinkedIn">in</a>
-          <a href="#" class="soc-btn" title="Instagram">ig</a>
-          <a href="#" class="soc-btn" title="GitHub">gh</a>
+          <a href="#" class="soc-btn">𝕏</a>
+          <a href="#" class="soc-btn">in</a>
+          <a href="#" class="soc-btn">ig</a>
+          <a href="#" class="soc-btn">gh</a>
         </div>
       </div>
       <div class="footer-col">
@@ -398,7 +369,7 @@
           <li><a href="#services">Software Dev</a></li>
           <li><a href="#services">Web Development</a></li>
           <li><a href="#services">Database Mgmt</a></li>
-          <li><a href="#services">Server & Hosting</a></li>
+          <li><a href="#services">Server &amp; Hosting</a></li>
           <li><a href="#services">Digital Marketing</a></li>
           <li><a href="#services">Content Creation</a></li>
           <li><a href="#services">AI Platforms</a></li>
@@ -412,7 +383,6 @@
           <li><a href="#process">How We Work</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact Us</a></li>
-          <li><a href="#">Careers</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -422,7 +392,6 @@
           <li><a href="#">Terms of Service</a></li>
           <li><a href="#">Cookie Policy</a></li>
           <li><a href="#">Refund Policy</a></li>
-          <li><a href="#">Sitemap</a></li>
         </ul>
       </div>
     </div>
@@ -433,7 +402,7 @@
   </div>
 </footer>
 
-<!-- ═══════════════════════ FIXED ELEMENTS ═══════════════════════ -->
+<!-- ══ FIXED ELEMENTS ════════════════════════════════════════════ -->
 <div id="toast"></div>
 <button id="scroll-top" title="Back to top">↑</button>
 
