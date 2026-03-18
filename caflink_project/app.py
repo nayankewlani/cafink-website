@@ -9,6 +9,8 @@ from flask import Flask, request, jsonify, render_template, g, send_from_directo
 app = Flask(__name__)
 app.config['DATABASE'] = os.path.join(os.path.dirname(__file__), 'db', 'caflink.db')
 app.config['SECRET_KEY'] = 'caflink-secret-2025'
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 # ── DB helpers ──────────────────────────────────────────────────────
 def get_db():
@@ -156,4 +158,11 @@ if __name__ == '__main__':
     os.makedirs(os.path.dirname(app.config['DATABASE']), exist_ok=True)
     init_db()
     print("🚀 CAFLink running at http://localhost:5000")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # REPLACE with this:
+if __name__ == '__main__':
+    os.makedirs(os.path.dirname(app.config['DATABASE']), exist_ok=True)
+    init_db()
+    port = int(os.environ.get('PORT', 5000))
+    print(f"🚀 CAFLink running → http://localhost:{port}")
+    print(f"🔐 Admin panel  → http://localhost:{port}/admin")
+    app.run(debug=False, host='0.0.0.0', port=port)

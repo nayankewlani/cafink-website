@@ -79,7 +79,13 @@ body {
   display: flex; align-items: center; justify-content: space-between;
   height: 100%; padding: 0 32px;
 }
-.nav-logo img { height: 44px; object-fit: contain; display: block; }
+/* Nav logo fix */
+.nav-logo img {
+  height: 95px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
 .nav-links a {
   color: var(--muted); text-decoration: none; font-size: 0.9rem;
@@ -587,10 +593,4 @@ footer {
   margin-bottom: 14px;
   display: block;
 }
-/* Nav logo fix */
-.nav-logo img {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
+
